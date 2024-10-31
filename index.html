@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ancient Youth Rankings</title>
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+
+    <body>
+        <div class="bg-animation"></div>
+        <div class="banner-container">
+            <img src="./gibraltar.png" alt="Gibraltar" class="banner" onerror="this.style.display='none';this.parentNode.textContent='Gibraltar Rankings'">
+        </div>
+        <div class="container">
+            <div class="ranking">
+                <h2>U20 Youth Ranking</h2>
+                <ul id="u20-rank-list" class="rank-list"></ul>
+            </div>
+            <div class="ranking">
+                <h2>O20 Youth Ranking</h2>
+                <ul id="o20-rank-list" class="rank-list"></ul>
+            </div>
+        </div>
+        <!-- Modal for displaying profile -->
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <h2 id="modal-name"></h2>
+                <img id="modal-img" class="profile-img" src="" alt="Profile Picture">
+                <h4><strong>Rank:</strong> <span id="modal-rank"></span></h4>
+                <h4><strong>Level:</strong> <span id="modal-level"></span></h4>
+                <h4><strong>Coins:</strong> <span id="modal-coins"></span></h4>
+                <button class="modal-close" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+
+</html>

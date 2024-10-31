@@ -1,0 +1,242 @@
+/* Base styling */
+body {
+    font-family: 'Georgia', serif;
+    background: url('background.jpg');
+    background-size: cover;
+    color: #4b3f2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #e7dfc6;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    color: #8d6e4b;
+    font-size: 3.5em;
+    margin: 20px 0;
+    text-shadow: 3px 3px 6px #4b3f2f;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 4px solid #8d6e4b;
+    padding-bottom: 10px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    justify-content: center;
+}
+
+.ranking {
+    background: rgba(213, 194, 160, 0.9);
+    border: 8px double #8d6e4b;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    width: 360px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.ranking:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+}
+
+.ranking h2 {
+    color: #7b5e42;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #4b3f2f;
+    border-bottom: 2px solid #8d6e4b;
+    padding-bottom: 8px;
+}
+
+.rank-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rank-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: rgba(249, 242, 227, 0.95);
+    border-bottom: 2px solid #c2a074;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-style: italic;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.rank-item:hover {
+    background: rgba(249, 242, 227, 1);
+    transform: translateY(-2px);
+}
+
+.rank-item:last-child {
+    border-bottom: none;
+}
+
+.rank-name {
+    font-weight: bold;
+    color: #4b3f2f;
+    transition: color 0.3s;
+}
+
+.rank-name:hover {
+    color: #8d6e4b;
+}
+
+.rank-coins {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: #d4af37;
+    font-size: 1.3em;
+}
+
+.coin-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    filter: drop-shadow(1px 1px 1px #4b3f2f);
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 250, 230, 0.95);
+    padding: 30px;
+    width: 50%;
+    max-height: 80%;
+    border: 5px solid #8d6e4b;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal h2 {
+    font-size: 2em;
+    color: #7b5e42;
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 2px solid #8d6e4b;
+    padding-bottom: 5px;
+}
+
+.modal h4 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.profile-img {
+    height: auto;
+    width: 30%;
+    border-radius: 50%;
+    margin-top: 5px;
+    border: 4px solid #8d6e4b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.modal-close {
+    background-color: #8d6e4b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.modal-close:hover {
+    background-color: #7b5e42;
+}
+
+.banner-container {
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    /* Reduced max-height */
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .banner-container {
+        padding: 0 10px;
+    }
+
+    .banner {
+        max-height: 150px;
+        /* Further reduced for smaller screens */
+    }
+
+    h1 {
+        font-size: 2.5em;
+        /* Smaller font size for the main title on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        max-height: 100px;
+        /* Even smaller for very small screens */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
