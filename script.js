@@ -4,7 +4,7 @@ import {
   getAuth,
   signInWithCustomToken,
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getTokenFromHash, getCachedToken } from "./utils.js";
+import { getTokenFromHash, getCachedToken, fetchNewToken } from "./utils.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,7 +15,7 @@ const firebaseConfig = {
   messagingSenderId: "342673920784",
   appId: "1:342673920784:web:02d854f8e04c954e2bcb95",
 };
-const token = getTokenFromHash() || getCachedToken();
+const token = getTokenFromHash() || getCachedToken() || fetchNewToken();
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

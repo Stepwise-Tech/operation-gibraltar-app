@@ -44,3 +44,7 @@ export function getCachedToken() {
       return null;
   }
 }
+
+export function fetchNewToken() {
+  window.location.replace("https://bucuresti.brunstad.org/api/fire-token.php?r="+window.location.href);
+}
