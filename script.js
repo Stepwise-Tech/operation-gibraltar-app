@@ -1,3 +1,30 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+import {
+  getAuth,
+  signInWithCustomToken,
+} from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA1v8umEbUClYELmn08FnY4OZWFFuTaoYg",
+  authDomain: "operation-gibraltar.firebaseapp.com",
+  projectId: "operation-gibraltar",
+  storageBucket: "operation-gibraltar.firebasestorage.app",
+  messagingSenderId: "342673920784",
+  appId: "1:342673920784:web:02d854f8e04c954e2bcb95",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const userCredential = signInWithCustomToken(auth, "ey...token").catch(
+  (error) => {
+    console.error(error.code, error.message, error);
+    return false;
+  }
+);
+
 // Roman-inspired rank names
 const romanRanks = ["Miles", "Centurio", "Tribunus", "Legatus", "Imperator"];
 
