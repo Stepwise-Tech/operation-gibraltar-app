@@ -4,7 +4,7 @@ import {
   getAuth,
   signInWithCustomToken,
 } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
-import { getTokenFromHash, getCachedToken } from "./utils";
+import { getTokenFromHash, getCachedToken } from "./utils.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
